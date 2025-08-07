@@ -1,42 +1,34 @@
-# 🐞 Os Sete Bugs
+# Jogo dos 7 Erros para QA
 
-**Os Sete Bugs** é um experimento interativo em HTML, CSS e JavaScript feito para quem vive testando — literalmente.
+Este projeto consiste em uma página de cadastro com 7 erros intencionais para testers encontrarem. É uma ferramenta divertida para treinar habilidades de QA e testar a atenção aos detalhes.
 
-## 🎯 Objetivo
+## Como usar
 
-Navegue por uma interface aparentemente funcional e encontre **sete bugs escondidos**.  
-Eles foram inseridos propositalmente e variam entre falhas de layout, lógicas de interação e comportamentos inesperados.
+1. Abra o arquivo `index.html` em um navegador web
+2. Tente encontrar os 7 erros na página de cadastro
+3. Anote os erros encontrados
 
-Nenhum bug aqui é por acaso — mas sua descoberta, sim.
-
----
-
-## 🧪 Para quem é
-
-Este projeto foi criado especialmente para:
-- Testers e analistas de QA que querem treinar o olhar crítico
-- Curiosos por falhas e inconsistências em interfaces
-- Instrutores que queiram usar o jogo como ferramenta de ensino
-- Desenvolvedores que acham que front-end não tem erro (😏)
-
----
-
-## 🕹️ Como jogar
-
-1. Acesse a página do jogo.
-2. Interaja livremente com todos os elementos.
-3. Encontre os 7 bugs.
-4. Não existe uma pontuação oficial... mas você sabe quando acerta. 😉
-
-
----
-
-## 🚀 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - HTML5
 - CSS3
-- JavaScript Vanilla (sem frameworks)
+- JavaScript (vanilla)
+
+## Lista dos 7 erros (apenas para referência do desenvolvedor)
+
+1. **Botão WhatsApp que não funciona**: O ícone do WhatsApp está presente, mas ao clicar nada acontece.
+2. **Campo senha com validação contraditória**: Apesar de dizer que precisa de caractere especial, letra maiúscula e número, o campo dá erro quando o usuário coloca letra maiúscula, sem informar qual é o problema.
+3. **Campo Confirmar Senha que não impede salvar vazio**: O campo não tem validação de obrigatoriedade.
+4. **Validação de CPF com formato enganoso**: O campo de CPF mostra um placeholder com formato 037-037-640-40, mas não permite digitar hífens.
+5. **Link dos termos e condições que não abre na primeira tentativa**: É necessário clicar duas vezes para abrir o modal dos termos.
+6. **Campo de CPF que permite envio mesmo vazio**: Apesar de ser um campo obrigatório, o formulário pode ser enviado com o CPF em branco.
+7. **Botão X dos modais que não funciona**: O botão de fechar (X) nos modais de sucesso e termos não responde ao clique.
+
+## Bônus: Erros escondidos
+
+1. **Campo de telefone que desaparece em telas pequenas**: Em dispositivos móveis ou telas menores que 480px, o campo de telefone desaparece completamente sem aviso.
+2. **Botão de cadastro que muda de cor**: Em telas menores que 480px, o botão de cadastro muda de cor sem aviso.
 
 ---
 
-
+**Nota**: Este projeto é apenas para fins educacionais e de treinamento em QA. Não use este código em ambientes de produção.
