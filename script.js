@@ -97,9 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (!cpf) {
-             if (window.innerWidth >= 480) {
             document.getElementById('cpf-error').textContent = 'CPF é obrigatório';
-             }
             hasError = true;
         } else if (!validarCPF(cpf)) {
             document.getElementById('cpf-error').textContent = 'CPF inválido';
