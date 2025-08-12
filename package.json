@@ -1,0 +1,15 @@
+{
+  "name": "jogo_sete_bugs",
+  "version": "1.0.0",
+  "description": "**Os Sete Bugs** é um experimento interativo em HTML, CSS e JavaScript feito para quem vive testando — literalmente.",
+  "main": "script.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.5.4"
+  }
+}
