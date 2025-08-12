@@ -29,9 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     closeButtons.forEach(function (button) {
         button.addEventListener('click', function () {
-            // if (successModal.style.display === 'block') {
-            //     form.reset();
-            // }
             successModal.style.display = 'none';
             termosModal.style.display = 'none';
 
@@ -112,27 +109,21 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('senha-error').textContent = 'Senha é obrigatória';
             hasError = true;
         } else {
-            // Erro 2 modificado: Senha deve ter caractere especial, letra maiúscula e número
-            // Mas se tiver letra maiúscula, dá erro sem informar qual é o problema
             const temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
             const temMaiuscula = /[A-Z]/.test(senha);
             const temNumero = /[0-9]/.test(senha);
 
             if (temMaiuscula) {
-                // Se tiver letra maiúscula, dá erro sem explicar o motivo
                 document.getElementById('senha-error').textContent = 'Senha inválida';
                 hasError = true;
             } else if (!temEspecial || !temNumero) {
-                // Se não tiver caractere especial ou número, informa o erro
                 document.getElementById('senha-error').textContent = 'A senha deve conter caractere especial, letra maiúscula, número e no mínimo 8 caracteres';
                 hasError = true;
             }
         }
 
         if (!hasError) {
-            // Mostra o modal de sucesso
             successModal.style.display = 'block';
-            // Não reseta o formulário aqui, apenas quando o usuário confirmar o modal
         }
     })
 })
