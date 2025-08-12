@@ -221,19 +221,3 @@ button:hover {
         margin: 20% auto;
     }
 }
-
-/* Erro 7: Campo de telefone desaparece em telas pequenas */
-@media (max-width: 480px) {
-    /* O campo de telefone desaparece em telas pequenas sem aviso */
-    /* Adicionamos uma classe específica no HTML para garantir compatibilidade */
-    #telefone, 
-    label[for="telefone"],
-    #telefone-error {
-        display: none;
-    }
-    
-    /* Mantemos o erro bônus do botão de cadastro com cor errada */
-    button[type="submit"] {
-        background-color: #27ae60;
-    }
-}
