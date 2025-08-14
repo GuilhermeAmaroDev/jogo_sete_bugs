@@ -13,12 +13,12 @@ describe('Links externos', () => {
     cy.wait(2000);
 
     cy.origin('https://github.com', () => {
-      cy.visit('https://github.com/GuilhermeAmaroDev');
+      cy.visit('/GuilhermeAmaroDev');
       cy.get('h1').should('contain', 'Guilherme Amaro');
     });
   });
 
-  it.only('Link do LinkedIn existe e está correto', () => {
+  it('Link do LinkedIn existe e está correto', () => {
   // Não conseguimos visitar o LinkedIn para validar o conteúdo da página
   // porque sites externos como o LinkedIn possuem proteções contra automação
   // (anti-bot, autenticação, captchas etc.).
