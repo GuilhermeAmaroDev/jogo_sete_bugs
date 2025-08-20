@@ -3,20 +3,18 @@ describe('Links externos', () => {
     cy.visit('https://guilhermeamarodev.github.io/jogo_sete_bugs/')
   })
 
-  it('Link do GitHub está correto e acessível', () => {
-    cy.get('a[href="https://github.com/GuilhermeAmaroDev"]')
-      .should('exist')
-      .invoke('removeAttr', 'target')
-      .click();
+it('Link do GitHub está correto e acessível', () => {
+  cy.get('a[href="https://github.com/GuilhermeAmaroDev"]')
+    .should('exist')
+    .then(($link) => {
+      const url = $link.prop('href'); // Pega a URL do link
 
-    //Apenas para visualizar o click no botão, em produção esse wait não deve existir
-    cy.wait(2000);
-
-    cy.origin('https://github.com', () => {
-      cy.visit('/GuilhermeAmaroDev');
-      cy.get('h1').should('contain', 'Guilherme Amaro');
+      cy.origin('https://github.com', { args: url }, (linkUrl) => {
+        cy.visit(linkUrl.replace('https://github.com', ''))
+        cy.get('h1').should('contain', 'Guilherme Amaro');
+      });
     });
-  });
+});
 
   it('Link do LinkedIn existe e está correto', () => {
   // Não conseguimos visitar o LinkedIn para validar o conteúdo da página
